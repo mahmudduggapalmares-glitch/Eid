@@ -3,7 +3,7 @@ import streamlit as st
 # Configuración de la página
 st.set_page_config(page_title="Eid Mubarak", page_icon="🌙")
 
-# Estilo personalizado con CSS
+# Estilo personalizado con CSS (CORREGIDO)
 st.markdown("""
     <style>
     .main {
@@ -22,14 +22,14 @@ st.markdown("""
         color: #ffffff;
     }
     </style>
-    """, unsafe_allow_status=True)
+    """, unsafe_allow_html=True)  # <-- Aquí estaba el error
 
 # Contenido de la página
-st.markdown('<p class="eid-title">🌙 ¡Eid Mubarak! 🌙</p>', unsafe_allow_status=True)
+st.markdown('<p class="eid-title">🌙 ¡Eid Mubarak! 🌙</p>', unsafe_allow_html=True)
 
 st.write("---")
 
-st.markdown('<p class="eid-message">Espero que la pasen demasiado bien y lo disfruten al máximo en este Eid.</p>', unsafe_allow_status=True)
+st.markdown('<p class="eid-message">Espero que la pasen demasiado bien y lo disfruten al máximo en este Eid.</p>', unsafe_allow_html=True)
 
 # Botón interactivo para celebrar
 if st.button('¡Celebrar! 🎉'):
@@ -38,4 +38,3 @@ if st.button('¡Celebrar! 🎉'):
 
 # Pie de página
 st.caption("Hecho con ❤️ para este Eid")
-
